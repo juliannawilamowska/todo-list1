@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/juliannawilamowska/todo-list1/issues"
   },
-  "homepage": "https://github.com/juliannawilamowska/todo-list1#readme"
+  "homepage": "https://github.com/juliannawilamowska/todo-list1#readme",
+  "dependencies": {
+    "@koa/router": "^8.0.8",
+    "koa": "^2.11.0",
+    "koa-static": "^5.0.0"
+  }
 }
