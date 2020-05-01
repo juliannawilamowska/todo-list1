@@ -12,7 +12,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.9'
-
+    - name: 'Run tests'
+      script: npm run test
     - name: 'Install dependencies'
       run: |
         npm install
