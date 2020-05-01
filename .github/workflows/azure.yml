@@ -13,7 +13,7 @@ jobs:
       with:
         node-version: '12.9'
     - name: 'Run tests'
-      script: npm run test
+      run: npm run test
     - name: 'Install dependencies'
       run: |
         npm install
