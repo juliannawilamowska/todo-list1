@@ -12,14 +12,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.9'
-    - name: 'Run tests'
-      run: npm run test
     - name: 'Install dependencies'
       run: |
         npm install
-       
+    - name: 'Deploy to Azure WebApp Staging'
+      if: github.ref == 'refs/heads/staging' 
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v1
       with: 
-        app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        app-name: ${{ secrets.STAGING }}
+        publish-profile: ${{ secrets.STAGING_PUBLISH_PROFILE }}
