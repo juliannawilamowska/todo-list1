@@ -1,4 +1,5 @@
 const Router = require('@koa/router')
+const store = require('../store')
 
 const router = new Router({ prefix: '/api/tasks' })
 
@@ -7,7 +8,9 @@ router.get('/', async (ctx) => {
 })
 
 router.post('/', async (ctx) => {
-  ctx.status = 501
+  await store.addTask(ctx.request.body)
+  console.log('addtask - post')
+  ctx.status = 200
 })
 
 router.delete('/', async (ctx) => {
