@@ -22,14 +22,15 @@ const init = async () => (
     })
   })
 )
-const addTask = async ({ title }) => (
+const addTask = async ({ title, description }) => (
     new Promise((resolve, reject) => {
       const gen = storage.TableUtilities.entityGenerator
       console.log('addtask - gen')
       const task = {
         PartitionKey: gen.String('task'),
         RowKey: gen.String(uuid.v4()),
-        title
+        title,
+        description
       }
       console.log('addtask - task')
       service.insertEntity(table, task, (error) => {
