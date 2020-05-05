@@ -61,6 +61,8 @@ const listTasks = async () => {
       })
   }
   
+
+  
 addTaskForm.addEventListener('submit', (event) => {
   event.preventDefault()
 
