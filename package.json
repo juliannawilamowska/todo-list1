@@ -1,7 +1,6 @@
 {
   "name": "todo-list1",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node server/index.js",
@@ -27,5 +26,6 @@
     "koa-logger": "^3.2.1",
     "koa-static": "^5.0.0",
     "uuid": "^8.0.0"
-  }
+  },
+  "description": ""
 }
