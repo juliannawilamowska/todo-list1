@@ -43,7 +43,7 @@ const addTask = async ({ title, description }) => (
     })
     ,console.log('addtask - Promise')
   )
-  
+
   const listTasks = async () => (
     new Promise((resolve, reject) => {
       const query = new storage.TableQuery()
@@ -52,10 +52,10 @@ const addTask = async ({ title, description }) => (
   
       service.queryEntities(table, query, null, (error, result) => {
         !error ? resolve(result.entries.map((entry) => ({
+            id: entry.rowKey._,
             title: entry.title._,
             description: entry.description._,
             Timestamp: entry.Timestamp._,
-            id: entry.rowKey._,
         }))) : reject()
       })
     })
