@@ -6,6 +6,7 @@ function LoggingFilter() {
       })
     }
   }
+
 const storage = require('azure-storage')
 const uuid = require('uuid')
 const retry = new storage.LinearRetryPolicyFilter();
@@ -20,6 +21,7 @@ const init = async () => (
     })
   })
 )
+
 const addTask = async ({ title, description }) => (
     new Promise((resolve, reject) => {
       const gen = storage.TableUtilities.entityGenerator
@@ -41,6 +43,7 @@ const addTask = async ({ title, description }) => (
     })
     ,console.log('addtask - Promise')
   )
+  
   const listTasks = async () => (
     new Promise((resolve, reject) => {
       const query = new storage.TableQuery()
@@ -72,11 +75,10 @@ const addTask = async ({ title, description }) => (
       })
     })
   )
-  
+
 module.exports = {
   init,
   addTask,
   listTasks,
   deleteTask
-
 }
