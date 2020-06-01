@@ -63,5 +63,7 @@ const addTask = async ({ title, description }) => (
 module.exports = {
   init,
   addTask,
-  listTasks
+  listTasks,
+  deleteTask
+
 }
